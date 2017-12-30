@@ -39,6 +39,10 @@ public class EventList<T> : IList<T>, ICollection<T>, IEnumerable<T>
     public class IndexEvent : UnityEvent<int> { }
     public IndexEvent OnRemovedAt = new IndexEvent();
 
+    public T[] ToArray() {
+        return list.ToArray();
+    }
+
     public int Count
     {
         get

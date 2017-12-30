@@ -15,7 +15,7 @@ public class EventObject<T> {
             return obj;
         }
         set {
-            if (!obj.Equals(value)) {
+            if (!EqualityComparer<T>.Default.Equals(obj, value)) {
                 obj = value;
                 OnChanged.Invoke(obj);
             }
