@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEngine;
 
 namespace System.Linq
 {
@@ -24,8 +25,10 @@ namespace System.Linq
 
 public class EventList<T> : IList<T>, ICollection<T>, IEnumerable<T>
 {
-    private List<T> list = new List<T>();
+    [SerializeField]
+    protected List<T> list = new List<T>();
 
+    [System.NonSerialized]
     public UnityEvent OnCleared = new UnityEvent();
 
     public class TEvent : UnityEvent<T> { }
