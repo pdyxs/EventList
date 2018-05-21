@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-public class EventObject<T> {
+public class EventObject<T>
+    where T : class
+{
 
     public class TEvent : UnityEvent<T> {}
 
@@ -21,4 +23,6 @@ public class EventObject<T> {
             }
         }
     }
+
+    public bool Exists => obj != null;
 }
